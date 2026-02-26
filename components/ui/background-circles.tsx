@@ -16,6 +16,7 @@ export const COLOR_VARIANTS = {
             "border-slate-600/30",
         ],
         gradient: "from-emerald-500/30",
+        glowColor: "rgba(16,185,129,0.1)",
     },
     secondary: {
         border: [
@@ -24,6 +25,7 @@ export const COLOR_VARIANTS = {
             "border-slate-600/30",
         ],
         gradient: "from-violet-500/30",
+        glowColor: "rgba(139,92,246,0.1)",
     },
     tertiary: {
         border: [
@@ -32,6 +34,7 @@ export const COLOR_VARIANTS = {
             "border-slate-600/30",
         ],
         gradient: "from-orange-500/30",
+        glowColor: "rgba(249,115,22,0.1)",
     },
     quaternary: {
         border: [
@@ -40,6 +43,7 @@ export const COLOR_VARIANTS = {
             "border-slate-600/30",
         ],
         gradient: "from-purple-500/30",
+        glowColor: "rgba(168,85,247,0.1)",
     },
     quinary: {
         border: [
@@ -48,6 +52,7 @@ export const COLOR_VARIANTS = {
             "border-slate-600/30",
         ],
         gradient: "from-red-500/30",
+        glowColor: "rgba(239,68,68,0.1)",
     },
     senary: {
         border: [
@@ -56,6 +61,7 @@ export const COLOR_VARIANTS = {
             "border-slate-600/30",
         ],
         gradient: "from-blue-500/30",
+        glowColor: "rgba(59,130,246,0.1)",
     },
     septenary: {
         border: [
@@ -64,6 +70,7 @@ export const COLOR_VARIANTS = {
             "border-slate-600/30",
         ],
         gradient: "from-gray-500/30",
+        glowColor: "rgba(107,114,128,0.1)",
     },
     octonary: {
         border: [
@@ -72,6 +79,7 @@ export const COLOR_VARIANTS = {
             "border-slate-600/30",
         ],
         gradient: "from-red-500/30",
+        glowColor: "rgba(239,68,68,0.1)",
     },
     brand: {
         border: [
@@ -80,6 +88,7 @@ export const COLOR_VARIANTS = {
             "border-yellow-600/20",
         ],
         gradient: "from-yellow-400/20",
+        glowColor: "rgba(250,204,21,0.1)",
     },
 } as const;
 
@@ -136,13 +145,8 @@ export function BackgroundCircles({
                         }}
                     >
                         <div
-                            className={cn(
-                                "absolute inset-0 rounded-full mix-blend-screen",
-                                `bg-[radial-gradient(ellipse_at_center,${variantStyles.gradient.replace(
-                                    "from-",
-                                    ""
-                                )}/10%,transparent_70%)]`
-                            )}
+                            className="absolute inset-0 rounded-full mix-blend-screen"
+                            style={{ background: `radial-gradient(ellipse at center, ${variantStyles.glowColor}, transparent 70%)` }}
                         />
                     </motion.div>
                 ))}
